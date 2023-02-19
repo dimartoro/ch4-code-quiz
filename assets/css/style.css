@@ -1,0 +1,93 @@
+.hidden{
+    display: none;
+}
+
+.timer{
+ font-size: 1.5em;
+ text-align: right;
+ margin-right: 5em;
+
+}
+
+.welcome{
+    border: 2px green solid;
+    margin-top: 2em;
+    font-size: 2em;
+    padding:2em;
+    text-align: center;
+}
+
+.welcome h1{
+    font-size: 3em;
+}
+
+.welcome button{
+    font-size: 2em;
+    /* background-color: coral; */
+}
+
+.questions{
+    border:2px red solid;
+    margin:2em auto;
+    padding: 2em;
+}
+
+.question{
+    background-color: antiquewhite;
+    font-size: 2em;
+}
+
+.answers{
+    border: 2px blue solid;
+    font-size: 2em;
+    width: 50%;
+    margin-top: 2em;
+}
+
+.answer{
+    display: block;
+    margin:1em;
+    background-color: aqua;
+    width:50%;
+}
+
+.answer:hover{
+    background-color: cadetblue;
+    cursor:default;
+}
+
+.answer-result{
+    margin:2em;
+    font-size: 3em;
+}
+
+
+
+.final-score{
+    padding: 1em;
+    margin:2em auto;
+    font-size: 2em;
+    border:2px green solid;
+}
+
+.final-score button{
+    font-size: 1em;
+}
+
+.results{
+    padding: 1em;
+    margin:2em auto;
+    border:2px red solid;
+}
+
+.results ul>li>span{
+    background-color: bisque;
+    font-size: 1.5em;
+    display: inline-block;
+    padding-left: 1em;
+    width:40%
+}
+
+.results button{
+    font-size: 2em;
+}
