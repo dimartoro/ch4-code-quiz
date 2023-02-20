@@ -14,20 +14,51 @@ var q5 = {};
 var q6 = {};
 var q7 = {};
 var q8 = {};
-q1.question = 'Q1';
-q1.answers = ['A1','A2','A3','A4'];
-q1.correctAnswer = 'A3';
+
+q1.question = 'What is Javascript?';
+q1.answers = [
+'1. Scripting language that enables you to create dynamically updating content.',
+'2. First HTML, second CSS, Javascript is the third layer of standard web techologies.',
+'3. Consist of some programming features that allow you to running code in response of certain events occurring on a web page.',
+'4. All of the above.'];
+q1.correctAnswer = '4. All of the above.';
 quiz.push(q1);
 
-q2.question = 'Q2';
-q2.answers = ['AA1','AA2','AA3','AA4'];
-q2.correctAnswer = 'AA4';
+q2.question = 'APIs are?';
+q2.answers = [
+'1. Application Programming Interfaces (APIs) provide only CSS with extra super powers to use.',
+'2. APIs are ready-made sets of code built on top of client-side Javascript language.',
+'3. APIs have nothing to do with a web page.',
+'4. None of the above'];
+q2.correctAnswer = '2. APIs are ready-made sets of code built on top of client-side Javascript language.';
 quiz.push(q2);
 
-q3.question = 'Q3';
-q3.answers = ['AAA1','AAA2','AAA3','AAA4'];
-q3.correctAnswer = 'AAA1';
+q3.question = 'Primitive Data Types are?';
+q3.answers = [
+'1. There are 3 primitive data types: Function, arrays, objects.',
+'2. There are 7 primitive data types: string, number, biginit, boolean, undefined, symbol, null.',
+'3. Primitive Datatypes are immutable; that is, they cannot be altered.',
+'4. 2 and 3.'];
+q3.correctAnswer = '4. 2 and 3.';
 quiz.push(q3);
+
+q4.question = 'What is the Event interface in the DOM?';
+q4.answers = [
+'1. The change in the state of an object is known as an event.',
+'2. Mouse events performed are click, mouseout, mousedown, mouseup, mousemove.',
+'3. The event handler of the mouse event click is onclick.',
+'4. All of the Above.'];
+q4.correctAnswer = '4. All of the Above.';
+quiz.push(q4);
+
+q5.question = 'Variables in Javascript are?';
+q5.answers = [
+'1. Containers for storing data values.',
+'2. Javascript is not case sensitive when declaring variables.',
+'3. A variable can hold a Boolean that is an structure that allows you to store multiple values in a single reference.',
+'4. Declaring variables in Javascript requires the data type'];
+q5.correctAnswer = '1. Containers for storing data values.';
+quiz.push(q5);
 
 // var parentAnswers = document.getElementsByClassName("answers")[0];
 // var children = parentAnswers.children;
@@ -44,31 +75,6 @@ for(var x = 0; x< answers.length; x++){
 //Register click event to call persistScore function. 
 document.querySelector("#btnSubmit").addEventListener("click", function(){persistScore()});
 //.addEventListener("click", function(){alert("Hola");});
-
-// q4.question = 'P4';
-// q4.answers = ['','','','',''];
-// q4.correctAnswer = '';
-// quiz.push(q4);
-
-// q5.question = '';
-// q5.answers = ['','','','',''];
-// q5.correctAnswer = '';
-// quiz.push(q5);
-
-// q6.question = '';
-// q6.answers = ['','','','',''];
-// q6.correctAnswer = '';
-// quiz.push(q6);
-
-// q7.question = '';
-// q7.answers = ['','','','',''];
-// q7.correctAnswer = '';
-// quiz.push(q7);
-
-// q8.question = '';
-// q8.answers = ['','','','',''];
-// q8.correctAnswer = '';
-// quiz.push(q8);
 
 
 //Quiz starts after reacting to the click of buttom by event listener click.
