@@ -7,29 +7,33 @@ body {
 }
 
 .scores{
-    color:blue;
+    color:green;
     cursor: pointer;
     display: inline;
 }
 
 .scores:hover{
-    color:aqua;
+
+    color: rgb(205, 216, 216); 
+   
 }
 
 .timer{
- font-size: 2em;
- text-align: right;
- margin-right: 5em;
- display: inline;
-float:right;
+    color:green;
+    font-size: 2em;
+    text-align: right;
+    margin-right: 5em;
+    display: inline;
+    float:right;
 }
 
-h2 {
+h2{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-stretch:expanded;
     font-size: 2em;
     
 }
+
 
 .welcome{
     border: 2px green solid;
@@ -43,16 +47,18 @@ h2 {
     font-size: 3em;
 }
 
-.welcome button{
-    font-size: 2em;
-    /* background-color: coral; */
-}
+p{
+    font-size: 1.15em;
+    text-align:center;
+    margin: 1.5em;
+    line-height: 1.3; 
+} 
 
 .quiz-button{
-        /* position: absolute;
-        top:50%; */
-        background-color:rgba(0, 255, 225, 0.226);   
-        border-radius: 10px;
+
+    font-size: 2em;
+    background-color:rgba(0, 255, 225, 0.226);   
+    border-radius: 10px;
 }
 
 .quiz-button:hover{
