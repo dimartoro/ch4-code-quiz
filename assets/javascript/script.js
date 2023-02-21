@@ -1,16 +1,16 @@
 
-//declaration and initialization of global variables, quiz array, q object.
+//declaration and initialization of global variables, quiz array and q object.
 var timer = 90;
 var clearInterval;
 var questionIndex = 0;//variable to hold the current array index for  the questions been displayed.
 var activeCorrectAnswer = "";//Variable that will hold the current correct answer for the questions been displayed.
 var currentScore = 0;
-var quiz = [];
-var q1 = {};
-var q2 = {};
-var q3 = {};
-var q4 = {};
-var q5 = {};
+var quiz = []; //quiz array is initialized.
+var q1 = {}; //q object is initialized. It will have three attributes; question, multiple asnwers and right answer.
+var q2 = {}; 
+var q3 = {}; 
+var q4 = {}; 
+var q5 = {}; 
 
 q1.question = 'What is Javascript?';
 q1.answers = [
@@ -150,7 +150,7 @@ function userRegister(){
 }
 
 //in this function the users array and user object are created. The user attributes; user initials, and user score
-//by JSON.stringify are stored in the local storage.  
+//by JSON.stringify are stored in the local storage. If user did not enter the initials alert him/her to enter them. 
 function persistScore(){
     var initials = document.querySelector("#txtInitials").value;
     if(initials != '')
@@ -169,7 +169,7 @@ function persistScore(){
         localStorage.setItem("usersScores",JSON.stringify(users));
         printScores();
     }else{
-        alert("Please enter your initials!");
+        alert("Please enter your initials!"); //alert the user to enter the initials if the user missed to enter them.
     }
 }
 
