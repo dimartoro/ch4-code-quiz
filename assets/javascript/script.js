@@ -1,9 +1,9 @@
 
-//declaration of global variables, quiz array, q object. These are are going to enter different functions of the program.
+//declaration and initialization of global variables, quiz array, q object.
 var timer = 90;
 var clearInterval;
-var questionIndex = 0;
-var activeCorrectAnswer = "";
+var questionIndex = 0;//variable to hold the current array index for  the questions been displayed.
+var activeCorrectAnswer = "";//Variable that will hold the current correct answer for the questions been displayed.
 var currentScore = 0;
 var quiz = [];
 var q1 = {};
@@ -11,9 +11,6 @@ var q2 = {};
 var q3 = {};
 var q4 = {};
 var q5 = {};
-var q6 = {};
-var q7 = {};
-var q8 = {};
 
 q1.question = 'What is Javascript?';
 q1.answers = [
@@ -56,15 +53,10 @@ q5.answers = [
 '1. Containers for storing data values.',
 '2. Javascript is not case sensitive when declaring variables.',
 '3. A variable can hold a Boolean that is an structure that allows you to store multiple values in a single reference.',
-'4. Declaring variables in Javascript requires the data type'];
+'4. Declaring variables in Javascript requires the data type.'];
 q5.correctAnswer = '1. Containers for storing data values.';
 quiz.push(q5);
 
-// var parentAnswers = document.getElementsByClassName("answers")[0];
-// var children = parentAnswers.children;
-// for(var x = 0; x< children.length; x++){
-//     children[x].addEventListener("click",function(){evaluateAnswer(this);});
-// }
 
 //for loop in charge of adding event listener click button to each button of the multiple answers.
 var answers = document.getElementsByClassName("answer");
@@ -85,10 +77,12 @@ function startQuiz(){
     printNextQuestion();
     modifyTimer();
 }
+
 //printNextQuestion is in charge of invoking, filling and putting into play the q object and its three attributes; question, multiple asnwers and right answer.
 function printNextQuestion(){
     if(questionIndex==quiz.length){
         //alert("GAME OVER");
+        console.log("this is the last timer: ", timer);
         userRegister();
         //reStartQuiz();
     }else{
@@ -113,23 +107,24 @@ function printNextQuestion(){
 
 //evaluate the multiple option answers against the right answer. Penalize the Quiz' user reducing by 10 seconds the timer if the answer is wrong.
 function evaluateAnswer(caller){
-    console.log(caller);
+    console.log("THis is the caller: ", caller);
     var answer = caller.textContent;
     console.log(answer);
     if(activeCorrectAnswer == answer){
-        // console.log("You rock");
+       
         currentScore+=10;
-    }else{
-        // console.log("you suck");
-        timer=timer-10;
-    }
+    }else{     
+
+          timer=timer-10;         
+          
+        }
     printNextQuestion();
 }
 
 //restart Quiz.
 function reStartQuiz(){
     hideAll();
-    document.querySelector("#spanTimer").textContent = 00;
+    document.querySelector("#spanTimer").textContent = 90;
     var welcomSection = document.querySelector("#divWelcome");
     welcomSection.classList.remove("hidden");
     clearInterval()
@@ -138,8 +133,6 @@ function reStartQuiz(){
     currentScore = 0;
     document.querySelector("#txtInitials").value = "";
     document.querySelector("#spanScore").textContent = "";
-    var ul = document.querySelector("#ulScores");
-    ul.textContent = "";
 }
 
 //register the user, clear the timer and initialize it in 90.
@@ -152,30 +145,40 @@ function userRegister(){
     score.textContent = currentScore;
 
     clearInterval(refreshInterval);
+    document.querySelector("#spanTimer").textContent = timer;
     timer = 90;
 }
 
-//store the scores in the local store
+//in this function the users array and user object are created. The user attributes; user initials, and user score
+//by JSON.stringify are stored in the local storage.  
 function persistScore(){
-    var users = [];
-    var user = {};
-    
-    var existingUsers = JSON.parse(localStorage.getItem("usersScores"));
-    console.log(existingUsers);
-    if(existingUsers != null){
-        users = existingUsers;
-    }
     var initials = document.querySelector("#txtInitials").value;
-    var score = document.querySelector("#spanScore").textContent;
-    user.initials = initials;
-    user.score = score;
-    users.push(user);
-    localStorage.setItem("usersScores",JSON.stringify(users));
-    printScores();
+    if(initials != '')
+    {
+        var users = [];
+        var user = {};
+        var existingUsers = JSON.parse(localStorage.getItem("usersScores"));
+        console.log(existingUsers);
+        if(existingUsers != null){
+            users = existingUsers;
+        }
+        var score = document.querySelector("#spanScore").textContent;
+        user.initials = initials;
+        user.score = score;
+        users.push(user);
+        localStorage.setItem("usersScores",JSON.stringify(users));
+        printScores();
+    }else{
+        alert("Please enter your initials!");
+    }
 }
 
 //show scores organized from higher to lower by calling the organizeArray function.
 function printScores(){
+    clearInterval(refreshInterval);
+    timer = 90;
+    document.querySelector("#spanTimer").textContent = timer;
+
     hideAll();
     document.querySelector("#divResults").classList.remove("hidden");
     organizeArray();
@@ -187,10 +190,15 @@ function printScores(){
 function organizeArray(){
     var newArray = [];
     var existingUsers = JSON.parse(localStorage.getItem("usersScores"));
-    
-    newArray = existingUsers.sort((p1,p2)=>(p1.score < p2.score)? 1 :(p1.score > p2.score) ? -1:0);
 
-    for(var x = 0; x<existingUsers.length;x++){
+    if(existingUsers != null)
+    {
+        newArray = existingUsers.sort((p1,p2)=>(p1.score < p2.score)? 1 :(p1.score > p2.score) ? -1:0);
+    }
+    document.querySelector("#ulScores").textContent = "";
+    console.log("existingUsersArray: ", existingUsers);
+    console.log("newArray: ", newArray);
+    for(var x = 0; x<newArray.length;x++){
         displayElement(newArray[x]);
     }
 }
@@ -231,3 +239,10 @@ function hideAll(){
     document.querySelector("#divWelcome").classList.add("hidden");
     document.querySelector("#divQuestions").classList.add("hidden");
 }
+// function not used, to test only
+// function showAll(){
+//     document.querySelector("#divRegister").classList.remove("hidden");
+//     document.querySelector("#divResults").classList.remove("hidden");
+//     document.querySelector("#divWelcome").classList.remove("hidden");
+//     document.querySelector("#divQuestions").classList.remove("hidden");
+// }

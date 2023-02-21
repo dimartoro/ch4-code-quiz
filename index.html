@@ -6,20 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
     <title>Document</title>
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"></script>
 </head>
+
 <body>
     
- <header>
-    <div>
-        <h2>View high scores</h2>
-    </div>
-    <div class="timer">
-        Time: <span id="spanTimer">00</span>
-    </div>
+ <header>  
+        <h2 class="scores" onclick="printScores();">View high scores</h2>
+    <section class="timer">
+        Time: <span id="spanTimer">90</span>
+    </section>
 </header>   
 
  <main id="divWelcome" class="welcome">
@@ -30,35 +25,31 @@
         Try to answser the following code-related questions within the time limit.
         Keep in mind that incorrect answers will penalize your score/time by ten seconds. 
     </p>
-    <button onclick="startQuiz();">Start Quiz</button>
+    <button class="quiz-button" onclick="startQuiz();">Start Quiz</button>
 </main>
 
 
 <section id="divQuestions" class="questions hidden">
     <span id="spanQuestion" class="question"> First question</span>
-    <div class="answers">
-        <!-- <span class="answer" onclick="evaluateAnswer(this);"></span>
-        <span class="answer" onclick="evaluateAnswer(this);"></span>
-        <span class="answer" onclick="evaluateAnswer(this);"></span>
-        <span class="answer" onclick="evaluateAnswer(this);"></span> -->
-
+    <section class="answers">
         <span class="answer"></span>
         <span class="answer"></span>
         <span class="answer"></span>
         <span class="answer"></span>
         <span class="answer"></span>
 
-    </div>
+    </section>
 </section>
+
 <section id="divAnswerResult" class="answer-result hidden">
     <span>Anwser Result</span>
 </section>
 
 <section id="divRegister" class="final-score hidden">
     <h2 class="all-done">All Done</h2>
-    <div>
-        Your final score is: <span id="spanScore">99</span>
-    </div>
+    <section>
+        Your final score is: <span id="spanScore"></span>
+    </section>
     Enter Initials: <input type="text" id="txtInitials"/>
     <button id="btnSubmit">Submit</button>
 </section>

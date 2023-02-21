@@ -1,12 +1,34 @@
+
+body {
+    background-color: fff;
+}
 .hidden{
     display: none;
 }
 
+.scores{
+    color:blue;
+    cursor: pointer;
+    display: inline;
+}
+
+.scores:hover{
+    color:aqua;
+}
+
 .timer{
- font-size: 1.5em;
+ font-size: 2em;
  text-align: right;
  margin-right: 5em;
+ display: inline;
+float:right;
+}
 
+h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-stretch:expanded;
+    font-size: 2em;
+    
 }
 
 .welcome{
@@ -26,19 +48,32 @@
     /* background-color: coral; */
 }
 
+.quiz-button{
+        /* position: absolute;
+        top:50%; */
+        background-color:rgba(0, 255, 225, 0.226);   
+        border-radius: 10px;
+}
+
+.quiz-button:hover{
+
+    background-color: rgb(218, 212, 212)
+   
+}
+
 .questions{
-    border:2px red solid;
+    border:2px green solid;
     margin:2em auto;
     padding: 2em;
 }
 
 .question{
-    background-color: antiquewhite;
+    background-color:whitesmoke;
     font-size: 2em;
 }
 
 .answers{
-    border: 2px blue solid;
+    border: 2px green solid;
     font-size: 2em;
     width: 50%;
     margin-top: 2em;
@@ -47,12 +82,13 @@
 .answer{
     display: block;
     margin:1em;
-    background-color: aqua;
+    background-color: whitesmoke;
+    border-radius: 10px;
     width:50%;
 }
 
 .answer:hover{
-    background-color: cadetblue;
+    background-color: rgb(205, 216, 216);
     cursor:default;
 }
 
@@ -61,8 +97,6 @@
     font-size: 3em;
 }
 
-
-
 .final-score{
     padding: 1em;
     margin:2em auto;
@@ -70,18 +104,18 @@
     border:2px green solid;
 }
 
-.final-score button{
-    font-size: 1em;
-}
+ .final-score button{
+    font-size: 1.3em;
+} 
 
 .results{
     padding: 1em;
     margin:2em auto;
-    border:2px red solid;
+    border:2px green solid;
 }
 
 .results ul>li>span{
-    background-color: bisque;
+    background-color: whitesmoke;
     font-size: 1.5em;
     display: inline-block;
     padding-left: 1em;
@@ -89,5 +123,6 @@
 }
 
 .results button{
-    font-size: 2em;
-}
+    font-size: 1.9em;
+    margin: 0.2em;
+}  
