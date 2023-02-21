@@ -25,7 +25,7 @@ allowing the user to access and compare in descending order his/her score agains
 1. Created a new repository on GitHub
 2. Cloned it to my local repository using git bash.
 3. Started HTML, CSS and Javascript coding on my local repository and added, committed and pushed started code to my remote repository.
-4. Created 4 feature branches to commit and push changes from my local repo to my remote repo to keep my backups safe.
+4. Created 3 feature branches to commit and push changes from my local repo to my remote repo to keep my backups safe.
 5. Created the Readme File.
 
 
